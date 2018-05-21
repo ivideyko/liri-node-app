@@ -19,34 +19,34 @@ runCommand();
 /////////////////////////////////////////////////////////////
 
 function runCommand() {
-    
+
     switch (command) {
 
-    case "my-tweets":
-        getTweets();
-        break;
+        case "my-tweets":
+            getTweets();
+            break;
 
-    case "spotify-this-song":
-        getSong();
-        break;
+        case "spotify-this-song":
+            getSong();
+            break;
 
-    case "movie-this":
-        getMovie();
-        break;
+        case "movie-this":
+            getMovie();
+            break;
 
-    case "do-what-it-says":
-        doWhatItSays();
-        break; 
+        case "do-what-it-says":
+            doWhatItSays();
+            break; 
 
-    default:
-        console.log("\n");
-        console.log("Invalid command");
-        console.log("\n");
-        console.log("Valid commands:");
-        console.log("    my-tweets");
-        console.log("    spotify-this-song 'song name'");
-        console.log("    movie-this 'movie title'");
-        console.log("    do-what-it-says");
+        default:
+            console.log("\n");
+            console.log("Invalid command");
+            console.log("\n");
+            console.log("Valid commands:");
+            console.log("    my-tweets");
+            console.log("    spotify-this-song 'song name'");
+            console.log("    movie-this 'movie title'");
+            console.log("    do-what-it-says");
     }
 }
 
@@ -146,6 +146,7 @@ function getMovie () {
 }
 
 function doWhatItSays () {
+
     fs.readFile("random.txt", "utf8", function(error, data) {
 
         if (error) {
@@ -155,7 +156,7 @@ function doWhatItSays () {
         // re-assign command and param from text file
         command = dataArr[0];
         param = dataArr[1];
-
+        
         runCommand();
     });
 }
